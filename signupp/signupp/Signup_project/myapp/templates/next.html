@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width.initial-scale=1">
+        <title>Dashboard</title>
+
+        <script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+    </head>
+    <body>
+        
+        <form method="POST"></form>
+        <h1>Water Level</h1>
+        <div>
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        </div>
+        <script>
+            
+            const xValues = [100,200,300,400,500,600,700,800,900,1000];
+            
+            new Chart("myChart", {
+              type: "line",
+              data: {
+                labels: xValues,
+                datasets: [{ 
+                  data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+                  borderColor: "red",
+                  fill: false
+                }, { 
+                  data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+                  borderColor: "green",
+                  fill: false
+                }, { 
+                  data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+                  borderColor: "blue",
+                  fill: false
+                }]
+              },
+              options: {
+                legend: {display: false}
+              }
+            });
+            </script>
+            <br><br>
+            <a href="http://localhost:8000/login/"> Logout </a>
+
+    </body>
+</html>
